@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-
+    <script src="https://kit.fontawesome.com/19c579a42a.js" crossorigin="anonymous"></script>
     <title>Todo App</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
@@ -23,34 +24,8 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <!-- <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Dropdown
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                        </li> -->
+                        
                     </ul>
-                    <!-- <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form> -->
                     <div class="mx-2">
                         <button class="btn btn-danger" data-bs-toggle="modal"
                             data-bs-target="#loginModal">Login</button>
@@ -123,7 +98,93 @@
             </div>
         </div>
     </header>
+    <main>
+        <div class="container">
+            <!-- Heading -->
+            <div class="row justify-content-center">
+                <div class="col-1">
+                    <h1>TODO</h1>
+                </div>
+            </div>
+            <!-- Form to make todo -->
+            <form action="#">
+                <div class="container-fluid">
+                    <!-- Divider -->
+                    <div class="dropdown-divider"></div>
+                    <!-- Todo content -->
+                    <div class="row">
+                        <div class="col">
+                            <label for="todoNote">Description</label>
+                            <br>
+                            <textarea id="todoNote" name="todoNote" rows="2"
+                                placeholder="What do you need to do?"></textarea>
+                        </div>
+                    </div>
+                    <!-- Divider -->
+                    <div class="dropdown-divider"></div>
+                    <div class="row">
+                        <!-- Todo category -->
+                        <div class="col-6">
+                            <div class="d-flex justify-content-center">
+                                <div class="dropdown">
+                                    <label for="todoNote">Category</label>
+                                    <br>
+                                    <button class="btn dropdown-toggle dropdown-category" type="button"
+                                        id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Choose a category
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Todo deadline -->
+                        <div class="col-6">
+                            <div class="d-flex justify-content-center">
+                            <div class="dropdown">
+                                <button class="btn dropdown-toggle dropdown-category" type="button"
+                                    id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Choose a category
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <!-- divider -->
+                    <div class="dropdown-divider"></div>
+                    <!-- Buttons -->
+                    <div class="row">
+                        <!-- Add Task -->
+                        <div class="col-6">
+                            <div class="d-flex justify-content-center">
+                                <button type="button" class="btn btn-dark btn-lg"><i class="fas fa-plus"></i> ADD
+                                    TASK</button>
+                            </div>
+                        </div>
+                        <!-- Delete Task -->
+                        <div class="col-6">
+                            <div class="d-flex justify-content-center">
+                                <button type="button" class="btn btn-danger btn-lg"><i class="far fa-trash-alt"></i>
+                                    DELETE TASKS</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- divider -->
+                    <div class="dropdown-divider"></div>
+                </div>
+            </form>
+        </div>
 
+
+    </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
