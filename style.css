@@ -6,3 +6,12 @@
 .dropdown-category{
     padding: 0px;
 }
+
+.deadline{
+    display: inline-block;
+    margin-bottom: 0;
+}
+
+.todo-content{
+    margin-bottom: 0;
+}
