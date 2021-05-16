@@ -187,7 +187,7 @@
           </div>
         </div>
         <!-- Form to make todo -->
-        <form id="todo-form" action="#">
+        <form id="todo-form" action="/create-todo" method="POST">
           <div class="container-fluid">
             <!-- Divider -->
             <div class="dropdown-divider"></div>
@@ -213,42 +213,14 @@
                   <div class="dropdown">
                     <label for="todoNote">Category</label>
                     <br />
-                    <button
-                      class="btn dropdown-toggle dropdown-category"
-                      type="button"
-                      id="categoryButton"
-                      name="category"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="false"
-                    >
-                      Choose a category
-                    </button>
-                    <ul
-                      class="dropdown-menu"
-                      aria-labelledby="dropdownMenuButton1"
-                    >
-                      <li>
-                        <a id="personal" class="dropdown-item" href="#"
-                          >Personal</a
-                        >
-                      </li>
-                      <li>
-                        <a id="schooling" class="dropdown-item" href="#"
-                          >Schooling</a
-                        >
-                      </li>
-                      <li>
-                        <a id="work" class="dropdown-item" href="#">Work</a>
-                      </li>
-                      <li>
-                        <a id="cleaning" class="dropdown-item" href="#"
-                          >Cleaning</a
-                        >
-                      </li>
-                      <li>
-                        <a id="other" class="dropdown-item" href="#">Other</a>
-                      </li>
-                    </ul>
+                    <select name="category" id="category">
+                      <option value="none">Choose a category</option>
+                      <option value="Personal">Personal</option>
+                      <option value="Schooling">Schooling</option>
+                      <option value="Work">Work</option>
+                      <option value="Cleaning">Cleaning</option>
+                      <option value="Other">Other</option>
+                    </select>
                   </div>
                 </div>
               </div>

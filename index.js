@@ -12,9 +12,15 @@ app.set("view engine", "ejs");
 app.set("views", "./views");
 app.set("layout extractStyles", true);
 app.set("layout extractScripts", true);
+app.use(express.urlencoded());
 
 app.get("/", (req, res) => {
   return res.render("todo-home");
+});
+
+app.post("/create-todo", (req, res) => {
+  console.log(req.body);
+  return res.redirect("back");
 });
 
 app.listen(port, (err) => {
