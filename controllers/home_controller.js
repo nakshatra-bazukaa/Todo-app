@@ -8,6 +8,6 @@ module.exports.home = (req, res) => {
       return;
     }
     // console.log(todos);
-    return res.render("todo-home");
+    return res.render("todo-home", {todos});
   });
 };
