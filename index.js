@@ -1,8 +1,5 @@
 const express = require("express");
 
-const db = require("./config/mongoose");
-const Todo = require("./models/todo");
-
 const app = express();
 
 const port = 8000;
@@ -14,14 +11,7 @@ app.set("layout extractStyles", true);
 app.set("layout extractScripts", true);
 app.use(express.urlencoded());
 
-app.get("/", (req, res) => {
-  return res.render("todo-home");
-});
-
-app.post("/create-todo", (req, res) => {
-  console.log(req.body);
-  return res.redirect("back");
-});
+app.use("/", require("./routes"));
 
 app.listen(port, (err) => {
   if (err) console.log(`Error in running the server: ${err}`);
