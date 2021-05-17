@@ -252,7 +252,7 @@
                 </div>
               </div>
               <!-- Delete Task -->
-              <div class="col-6">
+              <!-- <div class="col-6">
                 <div class="d-flex justify-content-center">
                   <button
                     id="delete-todo"
@@ -262,7 +262,7 @@
                     <i class="far fa-trash-alt"></i> DELETE TASKS
                   </button>
                 </div>
-              </div>
+              </div> -->
             </div>
             <!-- divider -->
             <div class="dropdown-divider"></div>
@@ -270,55 +270,68 @@
         </form>
         <!-- Added todos -->
         <div id="added-todos" class="container">
-          <% todos.map((todo) => {
-            const {_id, todoNote, category, date } = todo;
-            let catColor = "";
-            switch (category) {
-              case "Personal":
-                catColor = "primary";
-                break;
-              case "Schooling":
-                catColor = "secondary";
-                break;
-              case "Work":
-                catColor = "success";
-                break;
-              case "Cleaning":
-                catColor = "warning";
-                break;
-              case "Other":
-                catColor = "info";
-                break;
-            } %>
-            <div
-              class="container-fluid"
-              id="todo-container-<%=_id%>"
-            >
-              <div class="d-flex bd-highlight">
-                <div class="p-2 bd-highlight">
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      type="checkbox"
-                      value=""
-                      name="check"
-                      id="check-<%=_id%>"
-                    />
-                  </div>
-                </div>
-                <div class="p-2 bd-highlight">
-                  <p class="fw-normal todo-content"><%=todoNote%></p>
-                  <i class="fa fa-calendar" aria-hidden="true"></i>
-                  <p class="text-muted deadline"><%=date%></p>
-                </div>
-                <div class="ms-auto p-2 bd-highlight">
-                  <h3><span class="badge bg-<%=catColor%>"><%=category%></span></h3>
-                </div>
+          <form id="delete-form" action="/delete-todos" method="POST">
+            <div class="col-6">
+              <div class="d-flex justify-content-center">
+                <button
+                  id="delete-todos"
+                  class="btn btn-danger btn-lg"
+                  type="submit"
+                >
+                  <i class="far fa-trash-alt"></i> DELETE TASKS
+                </button>
               </div>
-              <!-- divider -->
-              <div class="dropdown-divider"></div>
             </div>
-            <% }); %>
+            <% todos.map((todo) => {
+              const {_id, todoNote, category, date } = todo;
+              let catColor = "";
+              switch (category) {
+                case "Personal":
+                  catColor = "primary";
+                  break;
+                case "Schooling":
+                  catColor = "secondary";
+                  break;
+                case "Work":
+                  catColor = "success";
+                  break;
+                case "Cleaning":
+                  catColor = "warning";
+                  break;
+                case "Other":
+                  catColor = "info";
+                  break;
+              } %>
+                <div
+                  class="container-fluid"
+                  id="todo-container-<%=_id%>"
+                >
+                  <div class="d-flex bd-highlight">
+                    <div class="p-2 bd-highlight">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          value="<%=_id%>"
+                          name="<%=_id%>"
+                          id="check-<%=_id%>"
+                        />
+                      </div>
+                    </div>
+                    <div class="p-2 bd-highlight">
+                      <p class="fw-normal todo-content"><%=todoNote%></p>
+                      <i class="fa fa-calendar" aria-hidden="true"></i>
+                      <p class="text-muted deadline"><%=date%></p>
+                    </div>
+                    <div class="ms-auto p-2 bd-highlight">
+                      <h3><span class="badge bg-<%=catColor%>"><%=category%></span></h3>
+                    </div>
+                  </div>
+                  <!-- divider -->
+                  <div class="dropdown-divider"></div>
+                </div>
+              <% }); %>
+          </form>
         </div>
       </div>
     </main>
